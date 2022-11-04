@@ -4,39 +4,58 @@ function Pies() {
 }
 
 
-  function Pies(size, addOns) {
+  function Pies(size, addOns, sauce) {
     this.size = size;
     this.addOns = addOns;
+    this.sauce = sauce;
   }
 
 Pies.prototype.sizePrices = function() {
-  let finalPrice = 0;
+  let tempPrice = 0;
     if(this.size === "Large") {
-      this.finalPrice = 15;
+      this.tempPrice = 15;
     }  
       else if(this.size === "Medium") {
-        this.finalPrice = 12;
+        this.tempPrice = 12;
       }
       else if(this.size === "Small") {
-        this.finalPrice = 10;
+        this.tempPrice = 10;
       }
+      return tempPrice;
 }  
   Pies.prototype.addOnPrices = function() {
+    let tempPrice = 0;
     if(this.addOns === "1") {
-      this.finalPrice += 2;
+      this.tempPrice += 2;
     }  
       else if(this.addOns = "2") {
-        this.finalPrice += 4;
+        this.tempPrice += 4;
       }
       else if(this.addOns = "3") {
-        this.finalPrice += 5;
+        this.tempPrice += 5;
       }
       else {
-        this.finalPrice += 0;
+        this.tempPrice += 0;
       }
+      return tempPrice
   }
 
-
+  Pies.prototype.saucePrices = function() {
+    let tempPrice = 0;
+    if(this.sauce === "1") {
+      this.tempPrice += 2;
+    }  
+      else if(this.sauce = "2") {
+        this.tempPrice += 4;
+      }
+      else if(this.sauuce = "3") {
+        this.tempPrice += 5;
+      }
+      else {
+        this.tempPrice += 0;
+      }
+      return tempPrice;
+  }
 
 
 
