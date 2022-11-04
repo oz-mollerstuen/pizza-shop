@@ -23,7 +23,7 @@ Pies.prototype.sizePrices = function() {
       console.log(tempPrice1)
 }  
   Pies.prototype.addOnPrices = function() {
-    
+    this.addOns = "addOns"
 
     if(this.addOns.includes("Sausage")) {
       this.tempPrice2 += 2;
@@ -52,11 +52,11 @@ function handleSubmit(event) {
 
   const newPies = new Pies(sizeChoice, saus1, mush1, pep1);
   const newPies2= new Pies(sizeChoice, saus1, mush1, pep1);
-  const finalPie = newPies.sizePrices().value;
-  const finalPie2 = newPies2.addOnPrices().value;
+  const finalPie = newPies.sizePrices();
+  const finalPie2 = newPies2.addOnPrices();
 
   const finalCost = (finalPie + finalPie2)
-  document.getElementById("cost").innerHTML = toString(finalCost);
+  document.getElementById("cost").innerHTML = finalCost;
 
 };
 
