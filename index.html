@@ -12,7 +12,7 @@
       <h1>D-n-D-n-Pie</h1>
       <p>Roll a Nat 20 on taste!</p>
   
-      <form id="pizza-cost">
+      <form id="pie-choices">
         
        </label>
         <div class="form-group">
@@ -27,10 +27,10 @@
         <div class="form-group">
           <label for="sauce">Sauce choices:</label>
           <select id="sauce" class="form-control">
-            <option value="Pest">Pesto - $2</option>
-            <option value="Buf">Buffalo S
-            <option value="Gar">White Garlic Sauce - $5</option>
-            <option value="Reg">Regular Tomato Sauce - No charge</option>
+            <option value="1">Pesto - $2</option>
+            <option value="2">Buffalo Sauce - $4</option>
+            <option value="3">White Garlic Sauce - $5</option>
+            <option value="4">Regular Tomato Sauce - No charge</option>
           </select>
         </div>
         <div class="container">
@@ -41,17 +41,14 @@
           <input type="checkbox" id="accept" name="accept" value="yes"> Mushrooms <br>
           <label for="topping">
           <input type="checkbox" id="accept" name="accept" value="yes"> Pepperoni <br>
-          <label for="topping">
-          <input type="checkbox" id="accept" name="accept" value="yes"> Olives <br>
-          <label for="topping">
-          <input type="checkbox" id="accept" name="accept" value="yes"> Pineapple <br>
-          
-        </div>
+          </div>
           <div class="form-group">
             <button type="submit">Calculate</button>
           </div>
       </label>
    </form>
-
+   <div id="Final-cost">
+    <p><span class="cost"></span></p>
+  </div>
 </body>
 </html>

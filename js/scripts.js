@@ -12,27 +12,28 @@ function Pies() {
 
 Pies.prototype.sizePrices = function() {
   let tempPrice = 0;
-    if(this.size === "Large") {
+    if(this.size === "lg") {
       this.tempPrice = 15;
     }  
-      else if(this.size === "Medium") {
+      else if(this.size === "med") {
         this.tempPrice = 12;
       }
-      else if(this.size === "Small") {
+      else if(this.size === "sm") {
         this.tempPrice = 10;
       }
       return tempPrice;
 }  
   Pies.prototype.addOnPrices = function() {
     let tempPrice = 0;
+
     if(this.addOns === "1") {
       this.tempPrice += 2;
     }  
       else if(this.addOns = "2") {
-        this.tempPrice += 4;
+        this.tempPrice += 2;
       }
       else if(this.addOns = "3") {
-        this.tempPrice += 5;
+        this.tempPrice += 2;
       }
       else {
         this.tempPrice += 0;
@@ -60,9 +61,28 @@ Pies.prototype.sizePrices = function() {
 
 
 //--------------------UI Logic--------------------//
+let pies = new Pies();
 
-//window.addEventListener("load", function(event) {
-  //event.preventDefault();
-  //const form = document.getElementById();
-  //form.addEventListener("submit", );
-//)};
+function output(finalCost) {
+  $(".cost").html(
+    "Your Pizza is $" +
+      (finalCost.sizePrices() +
+        finalCost.addOnPrices() +
+        finalCost.saucePrices())
+  );
+  //confetti();
+}
+
+$(document).ready(function () {
+  $("form#pie-choices").submit(function (event) {
+    event.preventDefault();
+    const theAdds = $("#toppings option:selected").val();
+    const theSize = $("#size option:selected").val();
+    const theSauce = $("#sauce option:selected").val();
+    $("#toppings option:selected").val("");
+    $("input:radio[name=crustSize]:checked").val("");
+    $("#sauce option:selected").val("");
+    let finalCost = new Pie(theAdds, theSize,theSauce);
+    displayPrice(finalCost);
+  });
+});
