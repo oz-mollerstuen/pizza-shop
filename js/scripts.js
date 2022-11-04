@@ -1,8 +1,4 @@
 //--------------------Bus Log---------------------//
-function Pies() {
-  this.pies
-}
-
 
   function Pies(size, addOns, sauce) {
     this.size = size;
@@ -11,78 +7,60 @@ function Pies() {
   }
 
 Pies.prototype.sizePrices = function() {
-  let tempPrice = 0;
+  let tempPrice1 = 0;
     if(this.size === "lg") {
-      this.tempPrice = 15;
+      this.tempPrice += 15;
     }  
       else if(this.size === "med") {
-        this.tempPrice = 12;
+        this.tempPrice += 12;
       }
       else if(this.size === "sm") {
-        this.tempPrice = 10;
+        this.tempPrice += 10;
       }
-      return tempPrice;
+      return tempPrice1;
 }  
   Pies.prototype.addOnPrices = function() {
-    let tempPrice = 0;
+    let tempPrice2 = 0;
 
-    if(this.addOns === "1") {
+    if(this.addOns.includes("Sausage")) {
       this.tempPrice += 2;
     }  
-      else if(this.addOns = "2") {
+      else if(this.addOns.includes("Mushrooms")) {
         this.tempPrice += 2;
       }
-      else if(this.addOns = "3") {
+      else if(this.addOns.includes("Pepperoni")) {
         this.tempPrice += 2;
       }
       else {
         this.tempPrice += 0;
       }
-      return tempPrice
+      return tempPrice2
   }
 
-  Pies.prototype.saucePrices = function() {
-    let tempPrice = 0;
-    if(this.sauce === "1") {
-      this.tempPrice += 2;
-    }  
-      else if(this.sauce = "2") {
-        this.tempPrice += 4;
-      }
-      else if(this.sauce = "3") {
-        this.tempPrice += 5;
-      }
-      else {
-        this.tempPrice += 0;
-      }
-      return tempPrice;
-  }
+  Pies.prototype.addTop = function(addOns) {
+    this.addOns.push(addOns);
+}
 
 
 
 //--------------------UI Logic--------------------//
-let pies = new Pies();
+let Pie = new Pies();
 
-function output(finalCost) {
-  $(".cost").html(
-    "Your Pizza is $" +
-      (finalCost.sizePrices() +
-        finalCost.addOnPrices() +
-        finalCost.saucePrices())
-  );
-  //confetti();
+ 
+        //finalCost.addOnPrices() 
+        
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const sizeChoice = document.getElementById("size").value
+  const saus1 = document.getElementById("sausage").checked
+  const mush1 = document.getElementById("mushrooms").checked
+  const pep1 = document.getElementById("pepperoni").checked
+
+let finalCost = (tempPrice1 + tempPrice2)
+document.getElementById("cost").innerHTML = finalCost;
 }
 
-$(document).ready(function () {
-  $("form#pie-choices").submit(function (event) {
-    event.preventDefault();
-    const theAdds = $("#toppings option:selected").val();
-    const theSize = $("#size option:selected").val();
-    const theSauce = $("#sauce option:selected").val();
-    $("#toppings option:selected").val("");
-    $("input:radio[name=crustSize]:checked").val("");
-    $("#sauce option:selected").val("");
-    let finalCost = new Pie(theAdds, theSize,theSauce);
-    displayPrice(finalCost);
-  });
+window.addEventListener("load", function() {
+  this.document.getElementById("pie-choices").addEventListener("submit", handleSubmit);
 });

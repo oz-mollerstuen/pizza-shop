@@ -23,32 +23,23 @@
             <option value="sm">Small - $10</option>
           </select>
         </div>
-       
-        <div class="form-group">
-          <label for="sauce">Sauce choices:</label>
-          <select id="sauce" class="form-control">
-            <option value="1">Pesto - $2</option>
-            <option value="2">Buffalo Sauce - $4</option>
-            <option value="3">White Garlic Sauce - $5</option>
-            <option value="4">Regular Tomato Sauce - No charge</option>
-          </select>
-        </div>
+      
         <div class="container">
           <p>All toppings are $2 each:</p>
-          <label for="accept">
-          <input type="checkbox" id="accept" name="accept" value="yes"> Sausage <br>
-          <label for="accept">
-          <input type="checkbox" id="accept" name="accept" value="yes"> Mushrooms <br>
-          <label for="topping">
-          <input type="checkbox" id="accept" name="accept" value="yes"> Pepperoni <br>
+          <label for="sausage">
+          <input type="checkbox" id="sausage" name="sausage" value="true"> Sausage <br>
+          <label for="mushrooms">
+          <input type="checkbox" id="mushrooms" name="mushrooms" value="true"> Mushrooms <br>
+          <label for="pepperoni>
+          <input type="checkbox" id="pepperoni" name="pepperoni" value="true"> Pepperoni <br>
           </div>
           <div class="form-group">
-            <button type="submit">Calculate</button>
+            <button type="submit">Let take a look</button>
           </div>
       </label>
    </form>
    <div id="Final-cost">
-    <p><span class="cost"></span></p>
+    <p id="cost"></p>
   </div>
 </body>
 </html>
