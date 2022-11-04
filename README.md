@@ -30,4 +30,10 @@ Code: if(this.addOns === 3) {
 
 Expected output: finalPrice will += the price of add ons selected
 
+Test: "It should add in the prices of the pie sauces"
+Code: if(this.sauce === 2) {
+  this.finalPrice += 6;
+}
+Expected output: finalPrice will += the price of sauces selected
+
 

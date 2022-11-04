@@ -33,4 +33,14 @@ Pies.prototype.prices = function() {
     else {
       this.finalPrice += 0;
     }
+
+    if(this.sauce === 2) {
+      this.finalPrice += 8;
+    }
+    else if(this.sauce === 1) {
+      this.finalPrice += 4;
+    }
+    else {
+      this.finalPrice += 0;
+    }
 }
