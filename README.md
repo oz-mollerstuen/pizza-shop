@@ -1,4 +1,6 @@
-Describe: Pies()
+Pizzas are Pies.
+
+Describe: Pies() 
 
 Test: "It should create a constructor holding addOns, size, plain cheese pies, and sauce"
 Code: function Pies()
@@ -20,5 +22,12 @@ Code: Pies.prototype.prices = function() {
       this.finalPrice = 15;
     }  
 Expected output: finalPrice will = the price of size selected
+
+Test: "It should add in the prices of the pie add ons for toppings"
+Code: if(this.addOns === 3) {
+  this.finalPrice += 6;
+}
+
+Expected output: finalPrice will += the price of add ons selected
 
 

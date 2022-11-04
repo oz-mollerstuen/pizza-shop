@@ -4,7 +4,6 @@ function Pies()
   this.pies = {};
 
   function Pies(addOns, size, sauce) {
-    this.cheese = 8;
     this.sauce = sauce;
     this.size = size;
     this.addOns = addOns;
@@ -22,5 +21,16 @@ Pies.prototype.prices = function() {
         this.finalPrice = 10;
       }
     
-    
+    if(this.addOns === 3) {
+      this.finalPrice += 6;
+    }
+    else if(this.addOns === 2) {
+      this.finalPrice += 4;
+    }
+    else if(this.addOns === 1 ) {
+      this.finalPrice += 2;
+    }
+    else {
+      this.finalPrice += 0;
+    }
 }
