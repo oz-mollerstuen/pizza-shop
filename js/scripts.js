@@ -10,4 +10,17 @@ function Pies()
     this.addOns = addOns;
   }
 
-  
+Pies.prototype.prices = function() {
+  let finalPrice = 0;
+    if(this.size === "Large") {
+      this.finalPrice = 15;
+    }  
+      else if(this.size === "Medium") {
+        this.finalPrice = 12;
+      }
+      else {
+        this.finalPrice = 10;
+      }
+    
+    
+}
