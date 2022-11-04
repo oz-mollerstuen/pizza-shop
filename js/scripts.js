@@ -48,7 +48,7 @@ Pies.prototype.sizePrices = function() {
       else if(this.sauce = "2") {
         this.tempPrice += 4;
       }
-      else if(this.sauuce = "3") {
+      else if(this.sauce = "3") {
         this.tempPrice += 5;
       }
       else {

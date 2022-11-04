@@ -16,58 +16,42 @@
         
        </label>
         <div class="form-group">
-          <label for="crust">Choose your crust:</label>
-          <select id="crust" class="form-control">
-            <option value="R">Regular</option>
-            <option value="CS">Cheese Stuffed +$6</option>
-            <option value="GF">Gluten-Free +$6</option>
+          <label for="size">Pizza Size:</label>
+          <select id="size" class="form-control">
+            <option value="lg">Large - $15</option>
+            <option value="med">Medium - $12</option>
+            <option value="sm">Small - $10</option>
           </select>
         </div>
        
         <div class="form-group">
-          <label for="crust">Choose your crust:</label>
-          <select id="crust" class="form-control">
-            <option value="R">Regular</option>
-            <option value="CS">Cheese Stuffed +$6</option>
-            <option value="GF">Gluten-Free +$6</option>
+          <label for="sauce">Sauce choices:</label>
+          <select id="sauce" class="form-control">
+            <option value="Pest">Pesto - $2</option>
+            <option value="Buf">Buffalo S
+            <option value="Gar">White Garlic Sauce - $5</option>
+            <option value="Reg">Regular Tomato Sauce - No charge</option>
           </select>
         </div>
-        <div class="form-group">
-          <button type="submit">Calculate</button>
+        <div class="container">
+          <p>All toppings are $2 each:</p>
+          <label for="accept">
+          <input type="checkbox" id="accept" name="accept" value="yes"> Sausage <br>
+          <label for="accept">
+          <input type="checkbox" id="accept" name="accept" value="yes"> Mushrooms <br>
+          <label for="topping">
+          <input type="checkbox" id="accept" name="accept" value="yes"> Pepperoni <br>
+          <label for="topping">
+          <input type="checkbox" id="accept" name="accept" value="yes"> Olives <br>
+          <label for="topping">
+          <input type="checkbox" id="accept" name="accept" value="yes"> Pineapple <br>
+          
         </div>
-          <label for="accept">
-          <input type="checkbox" id="accept" name="accept" value="yes"> Accept <br>
-          <label for="accept">
-          <input type="checkbox" id="accept" name="accept" value="yes"> Accept <br>
-          <label for="topping">
-          <input type="checkbox" id="accept" name="accept" value="yes"> Accept <br>
-          <label for="topping">
-          <input type="checkbox" id="accept" name="accept" value="yes"> Accept <br>
-          <label for="topping">
-          <input type="checkbox" id="accept" name="accept" value="yes"> Accept <br>
-      
-     </label>
-      </form>
-  
-  
-  
-  
-  
-  
- </div>  
-  <form id="quiz">
-    <div class="container">
-      <div class="jumbotron"> 
-    <h2>Size</h2>
-    <label><input type="radio" name="lg" value="val1">
-      BugBear Barbarian (Large) 
-    </label><br/>
-    <label><input type="radio" name="med" value="val2">
-      Half-elf Druid (Medium)
-    </label><br/>
-    <label><input type="radio" name="sm" value="val3">
-      Gnome Artificer (Small)
-    </label><br/>
-    <p1 id="select"></p1>
+          <div class="form-group">
+            <button type="submit">Calculate</button>
+          </div>
+      </label>
+   </form>
+
 </body>
 </html>
