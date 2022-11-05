@@ -22,18 +22,27 @@
             <option value="med">Medium - $12</option>
             <option value="sm">Small - $10</option>
           </select>
+        </label>
         </div>
+
       
-        <div class="container">
+      <div class="form-group">
+        <label for="sauces">Sauce Choices:</label>
+        <select id="sauces" class="form-control">
+          <option value="tom">Traditional Tomato Sauce - Included at no cost</option>
+          <option value="gar">Garlic White Sauce + $4</option>
+          <option value="pest">Pesto Sauce + $3</option>
+        </select>
+      </div>
+      <div class="container">
           <p>All toppings are $2 each:</p>
-          <label for="addOns">
-          <input type="checkbox" id="sausage" name="sausage" value="true"> Sausage <br>
-          <label for="addOns">
-          <input type="checkbox" id="mushrooms" name="mushrooms" value="true"> Mushrooms <br>
-          <label for="addOns">
-          <input type="checkbox" id="pepperoni" name="pepperoni" value="true"> Pepperoni <br>
+          <div id="boxes">
+          <label><input type="checkbox" name="addOns" value= "Sausage"> Sausage </label> <br>
+          <label><input type="checkbox" name="addOns" value= "Mushrooms"> Mushrooms </label> <br>
+          <label><input type="checkbox" name="addOns" value= "Pepperoni"> Pepperoni </label> <br><br>
           </div>
-          <div class="form-group">
+        </div>
+        <div class="form-group">
             <button type="submit">Let take a look</button>
           </div>
       </label>

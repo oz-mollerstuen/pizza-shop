@@ -1,62 +1,70 @@
 //--------------------Bus Log---------------------//
 
-  function Pies(size, addOns, sauce) {
+  function Pies(size, sauces, addOns) {
     this.size = size;
+    this.sauces = sauces;
     this.addOns = addOns;
+    this.pricing = 0;
   };
-  let tempPrice2 = 0;
-  let tempPrice1 = 0;
-
+  
 Pies.prototype.sizePrices = function() {
   
     if(this.size === "lg") {
-      this.tempPrice1 += 15;
+      this.pricing = 15;
       console.log("made it here");
     }  
       else if(this.size === "med") {
-        this.tempPrice1 += 12;
+        this.pricing = 12;
       }
       else if(this.size === "sm") {
-        this.tempPrice1 += 10;
+        this.pricing = 10;
       }
-      return tempPrice1;
-      console.log(tempPrice1)
+      return this.pricing;
 }  
-  Pies.prototype.addOnPrices = function() {
-    this.addOns = "addOns"
 
-    if(this.addOns.includes("Sausage")) {
-      this.tempPrice2 += 2;
-    }  
-      else if(this.addOns.includes("Mushrooms")) {
-        this.tempPrice2 += 2;
-      }
-      else if(this.addOns.includes("Pepperoni")) {
-        this.tempPrice2 += 2;
-      }
-      else {
-        this.tempPrice2 += 0;
-      }
-      return tempPrice2
-  }
+Pies.prototype.saucePrices = function() {
   
+  if(this.sauces === "tom") {
+    this.pricing = 0;
+    console.log("made it here again");
+  }  
+    else if(this.size === "gar") {
+      this.pricing = 4;
+    }
+    else if(this.size === "pest") {
+      this.pricing = 3;
+    }
+    return this.pricing;
+  }  
+
+  Pies.prototype.addOnPrices = function() {
+    this.pricing += (this.addOns.length * 2);
+    return this.pricing;
+    
+  }
+ 
+ 
 //--------------------UI Logic--------------------//
 
 function handleSubmit(event) {
   event.preventDefault();
   
-  const sizeChoice = document.getElementById("size").value
-  const saus1 = document.getElementById("sausage").checked
-  const mush1 = document.getElementById("mushrooms").checked
-  const pep1 = document.getElementById("pepperoni").checked
+  let addOnsChoice = document.querySelectorAll('input[type = checkbox]:checked');
+  let sizeChoice = document.getElementById("size").value;
+  let sauceChoice = document.getElementById("sauces").value;
+  let newPie = new Pies(sizeChoice, sauceChoice, addOnsChoice);
 
-  const newPies = new Pies(sizeChoice, saus1, mush1, pep1);
-  const newPies2= new Pies(sizeChoice, saus1, mush1, pep1);
-  const finalPie = newPies.sizePrices();
-  const finalPie2 = newPies2.addOnPrices();
-
-  const finalCost = (finalPie + finalPie2)
-  document.getElementById("cost").innerHTML = finalCost;
+  for (let i = 0; i < addOnsChoice.length; i++) {
+    
+    newPie.addOns.push(addOnsChoice[i].value)
+    
+    }
+  
+newPie.addOnPrices();
+newPie.saucePrices();
+newPie.sizePrices();
+   
+document.getElementById("cost").innerHTML = newPie.pricing;
 
 };
 
