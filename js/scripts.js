@@ -4,20 +4,20 @@
     this.size = size;
     this.sauces = sauces;
     this.addOns = addOns;
-    this.pricing = 0;
+    this.pricing = 0
   };
   
 Pies.prototype.sizePrices = function() {
-  
+ 
     if(this.size === "lg") {
-      this.pricing = 15;
+      this.pricing += 15;
       console.log("made it here");
     }  
       else if(this.size === "med") {
-        this.pricing = 12;
+        this.pricing += 12;
       }
       else if(this.size === "sm") {
-        this.pricing = 10;
+        this.pricing += 10;
       }
       return this.pricing;
 }  
@@ -25,14 +25,14 @@ Pies.prototype.sizePrices = function() {
 Pies.prototype.saucePrices = function() {
   
   if(this.sauces === "tom") {
-    this.pricing = 0;
+    this.pricing += 0;
     console.log("made it here again");
   }  
     else if(this.size === "gar") {
-      this.pricing = 4;
+      this.pricing += 4;
     }
     else if(this.size === "pest") {
-      this.pricing = 3;
+      this.pricing += 3;
     }
     return this.pricing;
   }  
@@ -48,11 +48,9 @@ Pies.prototype.saucePrices = function() {
 
 function handleSubmit(event) {
   event.preventDefault();
-  
+  let addOns = [];
   let addOnsChoice = document.querySelectorAll('input[type = checkbox]:checked');
-  let sizeChoice = document.getElementById("size").value;
-  let sauceChoice = document.getElementById("sauces").value;
-  let newPie = new Pies(sizeChoice, sauceChoice, addOnsChoice);
+  let newPie = new Pies(size, sauces, addOns);
 
   for (let i = 0; i < addOnsChoice.length; i++) {
     
@@ -60,9 +58,9 @@ function handleSubmit(event) {
     
     }
   
-newPie.addOnPrices();
-newPie.saucePrices();
-newPie.sizePrices();
+
+newPie.saucePrices()
+newPie.sizePrices()
    
 document.getElementById("cost").innerHTML = newPie.pricing;
 
