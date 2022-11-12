@@ -5,6 +5,7 @@
     this.sauces = sauces;
     this.addOns = addOns;
     this.pricing = 0
+    
   };
   
 Pies.prototype.sizePrices = function() {
@@ -28,13 +29,15 @@ Pies.prototype.saucePrices = function() {
     this.pricing += 0;
     console.log("made it here again");
   }  
-    else if(this.size === "gar") {
+    else if(this.sauces === "gar") {
       this.pricing += 4;
     }
-    else if(this.size === "pest") {
+    else if(this.sauces === "pest") {
       this.pricing += 3;
     }
+    console.log(this.pricing)
     return this.pricing;
+    
   }  
 
   Pies.prototype.addOnPrices = function() {
@@ -45,27 +48,29 @@ Pies.prototype.saucePrices = function() {
  
  
 //--------------------UI Logic--------------------//
-
-function handleSubmit(event) {
-  event.preventDefault();
-  let addOns = [];
-  let addOnsChoice = document.querySelectorAll('input[type = checkbox]:checked');
-  let newPie = new Pies(size, sauces, addOns);
-
-  for (let i = 0; i < addOnsChoice.length; i++) {
-    
-    newPie.addOns.push(addOnsChoice[i].value)
-    
-    }
-  
-
-newPie.saucePrices()
-newPie.sizePrices()
-   
-document.getElementById("cost").innerHTML = newPie.pricing;
-
-};
-
 window.addEventListener("load", function() {
-  this.document.getElementById("pie-choices").addEventListener("submit", handleSubmit);
-});
+  const form = document.getElementById('pie-choices');
+   form.addEventListener('submit', function(event) {
+     event.preventDefault();
+     document.querySelector('#button').addEventListener("click", finalPie);
+    })
+    function finalPie() {
+      
+      let addOns = [];
+      const addOnChoice = document.querySelectorAll('input[type=checkbox]:checked');
+      const size = document.getElementById('size').value;
+      const sauces = document.getElementById('sauces').value;
+      let newPie = new Pies(size, sauces, addOns);
+    
+      for (let i = 0; i < addOnChoice.length; i++) {
+        newPie.addOns.push(addOnChoice[i].value)
+      }
+      newPie.sizePrices();
+      newPie.addOnPrices();
+      newPie.saucePrices();
+      
+      document.querySelector("#cost").innerHTML =  '$' + newPie.pricing;
+      
+}
+
+  })
